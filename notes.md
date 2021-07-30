@@ -6,7 +6,12 @@
 #namespacing - ability to distinguish between other apps and your apps if they have the same name
 #bundle install gems
 #for more help and vidos: https://instruction.learn.co/stuent/video_lectures#/
-
+#fill in to-dos on the gemspec file - add dependencies within this file
+#bin/chicago is the run file aka execution file which runs the code - the Shebang line is telling something to execute the program in ruby 
+#use "git add ."
+#git commit -m 'message'
+#git push
+#to see what repo you are pushing to, 'git remote -v' prints out the repo
 
 1. Flow of the program
     User starts app 
