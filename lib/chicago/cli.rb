@@ -16,83 +16,98 @@ class Chicago::CLI
         # list_activities - this happens after the user category input
         #get user input on which activity they want more information on - get_user_activity_input
         get_user_activity_input
-        #print out the name, description, category, and url for the activity - then ask user if they want more input
-        #details
-        #Do you want to see another activity? - y/n - if yes loop back 
-        #new_activty
-        #end the CLI
-        #goodbye
-    end 
-
-    #dont need to scrape this because categories wont change
-    #create an instance variables for categories to be able to use it in the instance 
-     #list the categories
-        #use each with index to iterate over and add an index number
-        #the index starts with 0 so add 1 to print out the index starting at 1
-    def list_categories 
+        
+    end
+ #---------------------------------------------------------------------------------------       
+    def list_categories #DONE
         @categories = ["Muesums", "Music, Comedy, and Nightlife", "Shopping", "Sports & Recreation", "Theater & Performing Arts", "Tours & Attractions"]
         @categories.each.with_index(1) {|index,category| 
             puts "#{category} - #{index}"
         }
     end 
-
-    def get_user_category_input
+        #list the categories
+        #use each with index to iterate over and add an index number
+        #the index starts with 0 so add 1 to print out the index starting at 1
+#-------------------------------------------------------------------------------------------------------
+    def get_user_category_input #DONE - DONT NEED SCRAPER DATA - THIS IS HARDCODED FROM LIST_ACTIVITIES
         print "Please choose a number associated with a category you would like to see activities for: 
         
         "
         input = gets.to_i
             if(input >= 1 && input <=6) 
-              list_activities
+             list_activities
             else
+    #after entering the valid number, you need to list the activities
              puts "Please enter a valid number 1-6"
+             input = gets.to_i
+             list_activities
             end 
     end 
+
+#--------------------------------------------------------------------------------------------------------
     
-    def list_activities
+    def list_activities #Logic Done
         puts "The following is a list of activities for category:"
-        #add in scraper data
         @activities = ["Shopping at Maceys", "Running Club", "Justin Bieber concert"]
         @activities.each.with_index(1) {|index, activity|
             puts "#{activity} - #{index}"
         }
+   
         puts "Which activity are you interested in learning more about? Please select a number: "
     end 
 
-
+#--------------------------------------------------------------------------------------------------------
     def get_user_activity_input
         input = gets.to_i
-        if(input >= 1 && input <=100) 
+        if(input >= 1 && input <=100) #this logic might need to change depending on input scraper
          puts details
         else
-         puts "Please choose an activity or type Exit to exit"
+         puts "Please choose a valid activity"
+         input = gets.to_i 
+         details
         end 
     end
-
-    def details
-        puts "Activty Name: "
-        puts "Activity Details: "
-        puts "URL: "
-
+#--------------------------------------------------------------------------------------------------------
+    def details #DONE
+        puts "Activty Name: SCRAPER DATA"
+        puts "Activity Description: SCRAPER DATA"
+        puts "Activity URL: SCRAPER DATA"
         new_activty
     end 
 
-    def new_activty
+
+#------------------------------------------------------------------------------------------------------
+    def activity_loop #DONE
+        list_categories
+        get_user_category_input
+        list_activities
+        get_user_activity_input
+    end 
+
+#------------------------------------------------------------------------------------------------------
+
+    def new_activty #DONE
         puts "Do you want to see another activity?"
         input = gets.chomp.to_s 
-        if input == "Y" || input == "Yes" || input == "y"
-            #loop back to the activity method to start over 
-            list_categories
-            get_user_category_input
-        elsif input == "N" || input == "No" || input == "n"
+        if input == "Y" || input == "Yes" || input == "y" || input == "yes"
+            activity_loop
+        elsif input == "N" || input == "No" || input == "n" || input == "no"
             goodbye 
         else 
-            "Please enter Yes or No"
+           puts "Please enter Yes or No"
+            input_new = gets.chomp.to_s 
+            if input_new == "Yes"
+                activity_loop
+            else 
+                goodbye
+            end
         end
     end 
 
-
-    def goodbye
+#---------------------------------------------------------------------------------------------------
+    def goodbye #DONE
         puts "Thank You for using Chicago Activity Tracker"
     end 
- 
+#---------------------------------------------------------------------------------------
+
 end 

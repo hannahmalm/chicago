@@ -35,3 +35,21 @@
     Activity
     Scraper
 3. Class relationships
+4. Draw out the classes
+
+
+
+#print out a list of Categories - list_categories
+        list_categories
+        #get user input on which category to choose - get_user_category_input
+        get_user_category_input
+        #get activity for respective cateogry - list_activities
+        # list_activities - this happens after the user category input
+        #get user input on which activity they want more information on - get_user_activity_input
+        get_user_activity_input
+        #print out the name, description, category, and url for the activity - then ask user if they want more input
+        #details
+        #Do you want to see another activity? - y/n - if yes loop back 
+        #new_activty
+        #end the CLI
+        #goodbye
