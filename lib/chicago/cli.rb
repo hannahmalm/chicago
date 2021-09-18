@@ -19,8 +19,12 @@ class Chicago::CLI
         
     end
  #---------------------------------------------------------------------------------------       
+    def get_categories 
+        @categories = Chciago::Category.all 
+    end 
+
+ #-------------------------------------------------------------------------------
     def list_categories #DONE
-        @categories = ["Muesums", "Music, Comedy, and Nightlife", "Shopping", "Sports & Recreation", "Theater & Performing Arts", "Tours & Attractions"]
         @categories.each.with_index(1) {|index,category| 
             puts "#{category} - #{index}"
         }
