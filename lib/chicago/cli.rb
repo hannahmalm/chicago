@@ -27,6 +27,7 @@ class Chicago::CLI
 
  #-------------------------------------------------------------------------------
     def list_categories #DONE
+        @categories = 
         @categories.each.with_index(1) {|index,category| 
             puts "#{category} - #{index}"
         }
