@@ -8,7 +8,7 @@ class Chicago::CLI
 
     def call 
         puts 'Welcome to Chicago Activities!'
-        #get_categories
+        get_categories
         #print out a list of Categories - list_categories
         list_categories
         #get user input on which category to choose - get_user_category_input
@@ -21,10 +21,10 @@ class Chicago::CLI
     end
  #---------------------------------------------------------------------------------------  
     #this corresponds to the category.rb file and the category class     
-    # def get_categories 
+    def get_categories 
         Chicago::Scraper.scrape_category
         @categories = Chicago::Category.all 
-    # end 
+    end 
 
  #-------------------------------------------------------------------------------
     def list_categories #DONE
