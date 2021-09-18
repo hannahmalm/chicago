@@ -15,14 +15,14 @@ class Chicago::Activity
         @@all
     end 
 
-    def add_to_category
-        #add the activity to the correct category unless it already incudes itself
-        @category.activities << self unless @categories.activities.include?(self)
-    end 
+    # def add_to_category
+    #     #add the activity to the correct category unless it already incudes itself
+    #     @category.activities << self unless @categories.activities.include?(self)
+    # end 
 
-    def get_activity_details
-        Chicago::Scraper.scrape_activity(self) if @activity_information.empty?
-    end 
+    # def get_activity_details
+    #     Chicago::Scraper.scrape_activity(self) if @activity_information.empty?
+    # end 
 
     def save 
         @@all << self
