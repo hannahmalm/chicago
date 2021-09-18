@@ -22,14 +22,13 @@ class Chicago::CLI
  #---------------------------------------------------------------------------------------  
     #this corresponds to the category.rb file and the category class     
     def get_categories 
-        Chicago::Scraper.scrape_category
-        @categories = Chicago::Category.all 
+        #Chicago::Scraper.scrape_category
+        @category_name = Chicago::Category.all 
     end 
 
  #-------------------------------------------------------------------------------
     def list_categories #DONE
-        @categories = 
-        @categories.each.with_index(1) {|index,category| 
+        @category_name.each.with_index(1) {|index,category| 
             puts "#{category} - #{index}"
         }
     end 

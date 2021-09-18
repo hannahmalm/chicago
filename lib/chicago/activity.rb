@@ -1,6 +1,7 @@
 class Chicago::Activity 
     attr_accessor :name, :category, :url, :activity_information
     #create an empty array for holding the chicago activities
+    #an event belongs to a category
     @@all = ["event1" , "even2", "event3"]
 
     def initialize(name, category)
@@ -20,7 +21,7 @@ class Chicago::Activity
     end 
 
     def get_activity_details
-        Chicago::Scraper.scrape_activity_information(self) if @activity_information.empty?
+        Chicago::Scraper.scrape_activity(self) if @activity_information.empty?
     end 
 
     def save 
