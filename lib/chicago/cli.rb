@@ -49,6 +49,7 @@ class Chicago::CLI
     def list_activities #Logic Done
         puts "The following is a list of activities for category:"
         @activities = ["Shopping at Maceys", "Running Club", "Justin Bieber concert"]
+       # Chicago::Activity.all.each.with_index
         @activities.each.with_index(1) {|index, activity|
             puts "#{activity} - #{index}"
         }

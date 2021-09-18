@@ -1,6 +1,7 @@
 class Chicago::Activity 
     attr_accessor :name, :category, :url, :activity_information
-    @@all = []
+    #create an empty array for holding the chicago activities
+    @@all = ["event1" , "even2", "event3"]
 
     def initialize(name, category)
         @name = name
