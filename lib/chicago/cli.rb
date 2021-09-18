@@ -22,7 +22,8 @@ class Chicago::CLI
  #---------------------------------------------------------------------------------------  
     #this corresponds to the category.rb file and the category class     
     # def get_categories 
-    #     @categories = Chicago::Category.all 
+        Chicago::Scraper.scrape_category
+        @categories = Chicago::Category.all 
     # end 
 
  #-------------------------------------------------------------------------------

@@ -8,6 +8,7 @@ class Chicago::Category
     end 
 
     def self.all
+        Chicago::Scraper.scrape_category if @@all.empty?
         @@all  
     end
 
